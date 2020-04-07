@@ -27,8 +27,8 @@ public class Movies {
     @Column(name = "price")
     private Double price;
 
-    @OneToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "actorsCList")
+    @OneToMany(cascade= {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "actorsList")
     private List<Actors> actorsList = new ArrayList<Actors>();
 
 
